@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border:2px solid #212121;
+            border-radius: 5px;
+            padding: 2%;
+            margin-top: 2%;
+            background-color: #eeee;
+            opacity: 80%;
+            }
+
+        body{
+            /* background-color: #f5f5f5; */
+            background: rgb(133, 131, 151);
+            background: linear-gradient(90deg, rgba(98,96,129,1) 0%, rgba(190, 190, 207, 0.958) 55%, rgb(136, 156, 160) 100%);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+           display: flex;
+           justify-content: flex-start;
+           align-items: center;
+           flex-direction: column;
+           min-height: 100vh;
+           overflow: scroll;
+        }
+        form{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        input {
+            height: 20px;
+            width: 120%;
+            border: 2px solid rgb(213, 221, 225);
+            border-radius: 5px;
+            transition: border 0.3s ease-in-out;
+        }
+        button {
+            background-color: white;
+            color: rgb(45, 45, 45);
+            border: 1px solid #a5a5b5;
+            border-radius: 5px;
+            transition: 0.5s ease-in-out;
+        }
+        button:hover {
+            background-color: #9ea5b2; /* Green */
+            color: white;
+        }
+        span{
+         margin-bottom: 2%;
+         position: relative;
+         left: -25%;
+        }
+        #result{
+          color:#000000;
+          text-shadow: 2px 2px 1px 2px;
+        }
+    
+    </style>
+</head>
+<body>
+    <div>
+    <h2>Table App</h2>
+    <form onsubmit="makeTable(); return false">
+        <span>
+            Number of Table: 
+        </span>
+    <input id="num" type="number" required placeholder=" Number of Table">
+    <br>
+    <span>
+        How many Time: 
+    </span>
+    <input id="num1" type="number"required value="10" >
+    <br>
+    <button type="submit">Ganarate</button>
+    </form>
+    </div>
+    <h2 id="result"></h2>
+<script>
+function makeTable(){
+    let num = document.querySelector("#num").value
+    let num1 = document.querySelector("#num1").value
+    let result = document.querySelector("#result")
+    result.innerHTML= ""
+    for(i = 0; i < num1; i++){
+        let count = i + 1;
+        result.innerHTML += `<b> ${num} x ${count} = ${num * count} </b> <br>`
+    }
+}
+</script>
+
+</body>
+</html>
